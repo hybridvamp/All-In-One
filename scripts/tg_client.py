@@ -44,7 +44,7 @@ def cache_url(client, cache_db):
             client,
             'tapswap_bot',
             'tapswap_bot',
-            'https://app.tapswap.ai/'
+            'https://app.tapswap.club/'
         ).url
         
         cache_db.set('tapswap_url', tapswap_url)
