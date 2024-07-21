@@ -119,7 +119,7 @@ class TapSwap:
             try:
                 self.headers.update({'Cache-Id': self.make_random_string(8)})
                 response = self.session.post(
-                    'https://api.tapswap.ai/api/account/login',
+                    'https://api.tapswap.club/api/account/login',
                     headers=self.headers,
                     data=json.dumps(payload)
                 ).json()
@@ -139,7 +139,7 @@ class TapSwap:
                     payload['chr'] = chq_result + three_digits
                     self.logger.info("[~] ByPass CHQ:  " + str(chq_result))
                     response = self.session.post(
-                        'https://api.tapswap.ai/api/account/login',
+                        'https://api.tapswap.club/api/account/login',
                         headers=self.headers,
                         data=json.dumps(payload)
                     ).json()
@@ -247,7 +247,7 @@ class TapSwap:
         if not self.is_ready:
             return
         response = self.session.get(
-            'https://api.tapswap.ai/api/stat',
+            'https://api.tapswap.club/api/stat',
             headers=self.headers_requests,
         ).json()
         return response
@@ -257,7 +257,7 @@ class TapSwap:
             return
         payload = {"type": boost_type}
         response = self.session.post(
-            'https://api.tapswap.ai/api/player/upgrade',
+            'https://api.tapswap.club/api/player/upgrade',
             headers=self.headers_requests,
             json=payload
         ).json()
@@ -268,7 +268,7 @@ class TapSwap:
             return
         payload = {"type": boost_type}
         response = self.session.post(
-            'https://api.tapswap.ai/api/player/apply_boost',
+            'https://api.tapswap.club/api/player/apply_boost',
             headers=self.headers_requests,
             json=payload
         ).json()
@@ -289,7 +289,7 @@ class TapSwap:
         while True:
             try:
                 response = self.session.post(
-                    'https://api.tapswap.ai/api/player/submit_taps',
+                    'https://api.tapswap.club/api/player/submit_taps',
                     headers=self.headers_requests,
                     json=payload
                 ).json()
